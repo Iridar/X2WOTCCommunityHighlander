@@ -202,7 +202,7 @@ simulated function SetSoldierImage( int UIIndex, int SoldierIndex, XComGameState
 	}
 
 	MC.QueueString(UnitState.GetSoldierClassTemplate().IconImage); //Class Icon Image
-	MC.QueueString(class'UIUtilities_Image'.static.GetRankIcon(UnitState.GetRank(), UnitState.GetSoldierClassTemplateName())); //Rank image
+	MC.QueueString(UnitState.GetSoldierRankIcon(UnitState.GetRank())); //Rank image // Issues #408 and #1004
 	
 	if (LadderData.LadderIndex < 10)
 	{

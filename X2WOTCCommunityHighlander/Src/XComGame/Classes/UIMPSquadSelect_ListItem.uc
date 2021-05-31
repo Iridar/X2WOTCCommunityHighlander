@@ -422,7 +422,7 @@ simulated function UpdateData(optional int Index = -1, optional bool bDisableEdi
 		{
 			NameStr = Unit.GetMPName(eNameType_FullNick);
 			RankStr = class'X2SoldierClassTemplateManager'.static.GetSoldierClassTemplateManager().FindSoldierClassTemplate(Unit.GetMPCharacterTemplate().SoldierClassTemplateName).DisplayName;
-			RankIconStr = class'UIUtilities_Image'.static.GetRankIcon(Unit.GetRank(), Unit.GetMPCharacterTemplate().SoldierClassTemplateName);
+			RankIconStr = Unit.GetSoldierRankIcon(Unit.GetRank()); // Issues #408 and #1004
 		}
 		else
 		{

@@ -1163,7 +1163,7 @@ simulated function UpdateGeneralMissionInfoPanel()
 		}
 
 		MC.QueueString(SoldierClass.IconImage); //Class Icon Image
-		MC.QueueString(class'UIUtilities_Image'.static.GetRankIcon(UnitState.GetRank(), UnitState.GetSoldierClassTemplateName())); //Rank image
+		MC.QueueString(UnitState.GetSoldierRankIcon(UnitState.GetRank())); //Rank image // Issues #408 and #1004
 		MC.QueueString(UnitState.GetFullName()); //Unit Name
 		MC.QueueString(class'UIUtilities_Text'.static.CapsCheckForGermanScharfesS(SoldierClass.DisplayName)); //Class Name
 		MC.EndOp();
@@ -1395,7 +1395,7 @@ simulated function UpdateDataSoldierData()
 	mc.BeginFunctionOp("SetSoldierData");
 	mc.QueueString("");
 	mc.QueueString(m_CurrentSquad[m_SelectedSoldier].GetSoldierClassTemplate().IconImage);
-	mc.QueueString(class'UIUtilities_Image'.static.GetRankIcon(m_CurrentSquad[m_SelectedSoldier].GetSoldierRank(), m_CurrentSquad[m_SelectedSoldier].GetSoldierClassTemplateName()));
+	mc.QueueString(m_CurrentSquad[m_SelectedSoldier].GetSoldierRankIcon(m_CurrentSquad[m_SelectedSoldier].GetRank())); // Issues #408 and #1004
 	mc.QueueString(class'X2ExperienceConfig'.static.GetRankName(m_CurrentSquad[m_SelectedSoldier].GetSoldierRank(), m_CurrentSquad[m_SelectedSoldier].GetSoldierClassTemplateName()));
 	mc.QueueString(m_CurrentSquad[m_SelectedSoldier].GetFullName()); //Unit Name
 	mc.QueueString(m_CurrentSquad[m_SelectedSoldier].GetSoldierClassTemplate().DisplayName); //Class Name

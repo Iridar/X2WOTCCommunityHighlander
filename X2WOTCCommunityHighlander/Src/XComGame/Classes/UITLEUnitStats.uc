@@ -131,7 +131,7 @@ simulated function UpdateData(XComGameState_Unit Unit, XComGameState CheckGameSt
 	}
 
 	MC.QueueString(SoldierClass.IconImage); //Class Icon Image
-	MC.QueueString(class'UIUtilities_Image'.static.GetRankIcon(Unit.GetRank(), Unit.GetSoldierClassTemplateName())); //Rank image
+	MC.QueueString(Unit.GetSoldierRankIcon(Unit.GetRank())); //Rank image // Issues #408 and #1004
 	MC.QueueString(class'X2ExperienceConfig'.static.GetRankName(Unit.GetSoldierRank(), Unit.GetSoldierClassTemplateName()));
 	
 	if (LadderData.LadderIndex < 10)

@@ -226,6 +226,9 @@
     <Content Include="Src\XComGame\Classes\UIImageChip.uc">
       <SubType>Content</SubType>
     </Content>
+    <Content Include="Src\XComGame\Classes\UILadderSoldierInfo.uc">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="Src\XComGame\Classes\UILadderUpgradeScreen.uc">
       <SubType>Content</SubType>
     </Content>
@@ -236,6 +239,12 @@
       <SubType>Content</SubType>
     </Content>
     <Content Include="Src\XComGame\Classes\UIMission_AlienFacility.uc">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Src\XComGame\Classes\UIMPShell_SquadUnitInfoItem.uc">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Src\XComGame\Classes\UIMPSquadSelect_ListItem.uc">
       <SubType>Content</SubType>
     </Content>
     <Content Include="Src\XComGame\Classes\UINarrativeMgr.uc">
@@ -353,6 +362,9 @@
       <SubType>Content</SubType>
     </Content>
     <Content Include="Src\XComGame\Classes\UITacticalHUD_SoldierInfo.uc">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Src\XComGame\Classes\UITLEUnitStats.uc">
       <SubType>Content</SubType>
     </Content>
     <Content Include="Src\XComGame\Classes\UITLE_ChallengeModeMenu.uc">
@@ -837,7 +849,6 @@
     <SolutionRoot>$(MSBuildProjectDirectory)\..\</SolutionRoot>
     <ScriptsDir>$(SolutionRoot).scripts\</ScriptsDir>
     <BuildCommonRoot>$(ScriptsDir)X2ModBuildCommon\</BuildCommonRoot>
-
     <!-- Default and debug are handeled by the .targets automatically -->
     <BuildEntryConfig Condition=" '$(Configuration)' == 'Final release' ">final_release</BuildEntryConfig>
     <BuildEntryConfig Condition=" '$(Configuration)' == 'Compiletest' ">compiletest</BuildEntryConfig>

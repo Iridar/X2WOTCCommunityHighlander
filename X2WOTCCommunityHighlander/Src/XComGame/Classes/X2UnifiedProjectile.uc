@@ -402,6 +402,8 @@ function EndConstantProjectileEffects( )
 			Projectiles[ Index ].ParticleEffectComponent.OnSystemFinished = none;
 			Projectiles[ Index ].ParticleEffectComponent.DeactivateSystem( );
 			Projectiles[ Index ].ParticleEffectComponent.KillParticlesForced( );
+			// Single line for Issue #720 - allow the pool to reuse this Particle System's spot in the pool.
+			class'WorldInfo'.static.GetWorldInfo().MyEmitterPool.OnParticleSystemFinished(Projectiles[ Index ].ParticleEffectComponent);
 			Projectiles[ Index ].ParticleEffectComponent = none;
 			Projectiles[ Index ].SourceAttachActor.SetPhysics( PHYS_None );
 			Projectiles[ Index ].TargetAttachActor.SetPhysics( PHYS_None );
@@ -1072,6 +1074,8 @@ function OnParticleSystemFinished(ParticleSystemComponent PSystem)
 	{
 		if (Element.ParticleEffectComponent == PSystem)
 		{
+			// Single line for Issue #720 - allow the pool to reuse this Particle System's spot in the pool.
+			class'WorldInfo'.static.GetWorldInfo().MyEmitterPool.OnParticleSystemFinished(Element.ParticleEffectComponent);
 			Element.ParticleEffectComponent = none;
 			return;
 		}
@@ -2121,6 +2125,8 @@ state Executing
 				{
 					Projectiles[ Index ].ParticleEffectComponent.OnSystemFinished = none;
 					Projectiles[ Index ].ParticleEffectComponent.DeactivateSystem( );
+					// Single line for Issue #720 - allow the pool to reuse this Particle System's spot in the pool.
+					class'WorldInfo'.static.GetWorldInfo().MyEmitterPool.OnParticleSystemFinished(Projectiles[ Index ].ParticleEffectComponent);
 					Projectiles[ Index ].ParticleEffectComponent = none;
 				}
 
@@ -2169,6 +2175,8 @@ state Executing
 				{
 					Projectiles[ Index ].ParticleEffectComponent.OnSystemFinished = none;
 					Projectiles[ Index ].ParticleEffectComponent.DeactivateSystem( );
+					// Single line for Issue #720 - allow the pool to reuse this Particle System's spot in the pool.
+					class'WorldInfo'.static.GetWorldInfo().MyEmitterPool.OnParticleSystemFinished(Projectiles[ Index ].ParticleEffectComponent);
 					Projectiles[ Index ].ParticleEffectComponent = none;
 					//`RedScreen("Projectile " $ Index  $ " vfx for weapon " $ FireAction.SourceItemGameState.GetMyTemplateName() $ " still hasn't completed after 10 seconds past expected completion time");
 				}

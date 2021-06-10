@@ -57,6 +57,9 @@
     <Content Include="Src\Engine\Classes\CHEngineVersion.uc">
       <SubType>Content</SubType>
     </Content>
+    <Content Include="Src\Engine\Classes\EmitterPool.uc">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="Src\Engine\Classes\SkeletalMeshSocket.uc">
       <SubType>Content</SubType>
     </Content>

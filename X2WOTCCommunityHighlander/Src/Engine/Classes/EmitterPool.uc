@@ -167,4 +167,6 @@ defaultproperties
 	SMC_MIC_ReductionTime=2.5
 	IdealStaticMeshComponents=250
 	IdealMaterialInstanceConstants=250
+
+	MaxActiveEffects=1000 // Issue #720 - set a global particle effect limit to prevent a memory leak.
 }
